@@ -1,0 +1,19 @@
+import React from 'react'
+import Image from 'next/image'
+
+import HomeButton from './../../Components/Reusable/HomeButton'
+import MovieDetails from './../../Components/Reusable/MovieDetails'
+
+
+function MovieID () {
+
+  return (
+    <div className="max-w-5xl mx-auto text-white ">
+        <div className="container mx-auto p-4 flex flex-col">
+            <MovieDetails/>
+        </div>
+        <HomeButton/>
+    </div>
+  )
+}
+export default MovieID

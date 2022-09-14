@@ -4,4 +4,17 @@ const nextConfig = {
   swcMinify: true,
 }
 
-module.exports = nextConfig
+module.exports = {
+  nextConfig,
+    env: {
+    API_URL: 'https://api.shofda.net/api',
+  },
+    images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'thumbnail-sm.shofda.net',
+      }
+    ],
+  },
+}
