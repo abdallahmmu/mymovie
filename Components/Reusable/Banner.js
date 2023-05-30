@@ -10,7 +10,7 @@ function Banner({ title, phargraph, options, onQueryUpdate }) {
       {phargraph && (
         <p className="mb-4">
           We Would Like To Thank You For choosing us 😀 <br /> Enjoy Watching
-          Your Favorite Movie and Show.🎥🎬
+          Your Favorite Movie.🎥🎬
         </p>
       )}
 

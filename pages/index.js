@@ -29,7 +29,7 @@ export default function Home() {
       <main className="h-full flex flex-col items-center justify-center gap-4">
         <Banner title="Welcome to My Movie App" phargraph={true} />
         <Banner
-          title="Please Choose What Kind Do You Love ?"
+          title="Please Choose A Category!"
           options={kind}
           onQueryUpdate={updateQueryHandelar}
         />

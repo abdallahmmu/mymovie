@@ -44,7 +44,7 @@ function MovieDetails() {
             />
             <p className="text-xl text-center mt-4 ">
               📌<span className="text-red-500">NOTE**</span> If The The Server
-              dosent Supported Make sure to Choose Another Server 😂😍
+              Did not Work Correctly Make sure to Choose Another Server 😂😍
             </p>
           </div>
           <div className="flex flex-col items-center justify-center mb-8">
