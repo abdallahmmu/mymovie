@@ -74,10 +74,10 @@ function MovieDetails() {
             )}
 
             {origin.Embedded.length === 0 && (
-              <iframe
+              <video
                 className="w-full h-screen"
                 src={origin.Seasons["0"].Episodes[0].Embedded[video]}
-              ></iframe>
+              ></video>
             )}
             {/*Shows */}
             {origin.Embedded.length === 0 && (
