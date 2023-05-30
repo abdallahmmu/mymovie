@@ -74,10 +74,13 @@ function MovieDetails() {
             )}
 
             {origin.Embedded.length === 0 && (
-              <video
+              <video controls muted
                 className="w-full h-screen"
-                src={origin.Seasons["0"].Episodes[0].Embedded[video]}
-              ></video>
+               
+              >
+                <source src={origin.Seasons["0"].Episodes[0].Embedded[video]}></source>
+                <source src={origin.Seasons["0"].Episodes[0].Embedded[video]} type="video/webm"></source>
+              </video>
             )}
             {/*Shows */}
             {origin.Embedded.length === 0 && (

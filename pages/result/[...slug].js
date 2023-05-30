@@ -12,7 +12,6 @@ function MovieID () {
         <div className="container mx-auto p-4 flex flex-col">
             <MovieDetails/>
         </div>
-        <BackButton/>
         <HomeButton/>
     </div>
   )
