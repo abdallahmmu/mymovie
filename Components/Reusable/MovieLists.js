@@ -2,11 +2,8 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import HomeButton from "./../../Components/Reusable/HomeButton";
 
-import { getAll } from "./../../utils/API_Calls";
-
-function MovieList({ titleDesc, data, loading,query }) {
+function MovieList({ titleDesc, data,query }) {
   return (
     <div className="max-w-5xl mx-auto text-white ">
       <div className="container mx-auto p-4 flex flex-col">

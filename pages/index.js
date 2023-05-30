@@ -1,4 +1,4 @@
-import React, { useMemo, useState,  } from "react";
+import React, { useCallback, useMemo, useState,  } from "react";
 import Head from "next/head";
 import Link from "next/link";
 
@@ -8,18 +8,16 @@ export default function Home() {
   const kind = useMemo(() => {
     return [
       "new-movies",
-      "shows",
       "movies/افلام انيميشن",
       "movies/افلام عربي",
-      "shows/مسلسلات عربي",
-      "shows/مسلسلات تركية",
-      "shows/مسلسلات اجنبية",
     ];
   }, []);
 
-  const updateQueryHandelar = (option) => {
+  const updateQueryHandelar = useCallback((option) => {
+    
     setQuery((prev) => option);
-  };
+    
+  },[]);
 
   const disable = () => (query === "" ? true : false);
 
@@ -48,7 +46,7 @@ export default function Home() {
                 disable() ? "cursor-no-drop opacity-75" : ""
               } bg-red-500 mb-4 py-2 px-10 rounded-md text-white `}
             >
-              Next
+              {query ? 'Search ' + query : 'Choose Some Category'}
             </button>
           </Link>
         </div>

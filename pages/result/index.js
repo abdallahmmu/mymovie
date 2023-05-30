@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Head from 'next/head'
+import Head from "next/head";
 
 import HomeButton from "./../../Components/Reusable/HomeButton";
 import MovieList from "./../../Components/Reusable/MovieLists";
@@ -8,11 +8,9 @@ import { getAll } from "./../../utils/API_Calls";
 
 let init = false;
 function Result({ origins, query }) {
-  const x = origins[0].data; // x is the origins data
+  const movies = origins[0].data; // x is the origins data
   const [page, setPage] = useState(1); // for Page number
-  const [data, setData] = useState(x);
-
-
+  const [data, setData] = useState(movies);
   // fetch data from client site
 
   useEffect(() => {
@@ -29,8 +27,6 @@ function Result({ origins, query }) {
     });
   }, [page, query]);
 
-
-
   return (
     <div>
       <Head>
@@ -42,8 +38,6 @@ function Result({ origins, query }) {
         titleDesc="Thank You For Choosing Us 🙏 Enjoy Your Time 😀⏱"
         data={data}
         query={query}
-    
-
       />
 
       <div className="max-w-6xl mx-auto text-center mb-8 text-white">
@@ -55,15 +49,15 @@ function Result({ origins, query }) {
             Back
           </button>
         )}
-       Page {page} of {origins[0].pages}
-
-{    page < origins[0].pages &&    <button
-          onClick={() => setPage((prev) => prev + 1)}
-          className="py-2 px-1 bg-sky-700 rounded-md hover:bg-sky-500 ml-2"
-        >
-          Next Page
-        </button>}
-
+        Page {page} of {origins[0].pages}
+        {page < origins[0].pages && (
+          <button
+            onClick={() => setPage((prev) => prev + 1)}
+            className="py-2 px-1 bg-sky-700 rounded-md hover:bg-sky-500 ml-2"
+          >
+            Next Page
+          </button>
+        )}
       </div>
     </div>
   );

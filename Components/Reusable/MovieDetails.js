@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -11,20 +11,17 @@ function MovieDetails() {
   const [video, setVideo] = useState(0);
   const newQuery = Object.keys(query); // convert the query to array to check if it a show or a movie
 
- console.log(newQuery);
+  const router = useRouter()
 
   useEffect(() => {
-    if (newQuery[0].includes('sh')) {
-      getAll(`show/${query.slug}`).then((data) => {
-        setOrigin(data.show);
-      });
-    } else {
       getAll(`movie/${query.slug}`).then((data) => {
+        if(data.error){
+          router.push('/')
+        }
         setOrigin(data.movie);
-      });
-    }
+      })
     document.title = "Enojy Watching🎬😀";
-  }, []);
+  }, [query,router]);
   return (
     <div className="max-w-5xl text-white ">
       {!origin && (

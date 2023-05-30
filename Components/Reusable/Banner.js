@@ -17,13 +17,13 @@ function Banner({ title, phargraph, options, onQueryUpdate }) {
       {options && (
         <>
           <label className="block mb-2 text-sm font-medium text-base-900 dark:text-gray-400">
-            Select an option
+            Select an Category
           </label>
           <select
             onChange={(e) => onQueryUpdate(e.target.value)}
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
           >
-            <option>Choose</option>
+            <option></option>
             {options.map((item, i) => {
               return (
                 <option key={i} value={item}>
@@ -38,4 +38,4 @@ function Banner({ title, phargraph, options, onQueryUpdate }) {
   );
 }
 
-export default Banner;
+export default React.memo(Banner);
